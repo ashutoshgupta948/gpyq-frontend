@@ -1,0 +1,28 @@
+.manual-test-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  background: #f9f9f9;
+  border-radius: 10px;
+}
+
+.checkbox-list {
+  margin-top: 20px;
+}
+
+.checkbox-item {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.next-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #222;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

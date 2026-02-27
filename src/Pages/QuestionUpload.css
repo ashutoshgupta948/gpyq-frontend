@@ -1,0 +1,83 @@
+.upload-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.upload-container h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.upload-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.upload-container textarea,
+.upload-container input,
+.upload-container select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.upload-container textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.upload-container select {
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.upload-container button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.upload-container button:hover {
+  background-color: #0056b3;
+}
+
+.upload-container select:disabled {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+/* ✅ Styling for Checkboxes */
+.checkbox-group {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #007bff; /* ✅ Blue checkbox */
+  cursor: pointer;
+}
+

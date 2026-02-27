@@ -1,0 +1,45 @@
+/* Styling for the main container */
+.year-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Heading Style */
+.year-heading {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Big Grey Box */
+.year-box {
+    background-color: #d3d3d3; /* Light grey */
+    width: 80%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Year Items */
+.year-item {
+    background-color: white;
+    padding: 15px;
+    margin: 10px;
+    width: 120px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.year-item:hover {
+    background-color: #4CAF50;
+    color: white;
+}

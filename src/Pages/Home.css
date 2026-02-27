@@ -1,0 +1,17 @@
+.home-container {
+    text-align: center; /* Center the text and images */
+  }
+  
+  .image-container {
+    display: flex;           /* Use flexbox layout */
+    justify-content: center; /* Center the images within the row */
+    margin-bottom: 20px;     /* Add space between the rows */
+  }
+  
+  .image {
+    width: 700px;  /* Set the width of the images */
+    height: 380px; /* Set the height of the images */
+    object-fit: cover; /* Ensure the images maintain aspect ratio and cover the dimensions */
+    margin: 0 10px; /* Add space between the images */
+  }
+  

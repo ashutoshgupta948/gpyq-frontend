@@ -1,0 +1,116 @@
+/* Main container */
+.topic-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f7fc; /* Light background for better contrast */
+    min-height: 100vh; /* Full height for better spacing */
+}
+
+/* Heading */
+.topic-heading {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #333; /* Darker text for better readability */
+    text-align: center;
+}
+
+/* Flexbox for Topics */
+.topic-box-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px; /* Adds space between the topic boxes */
+}
+
+/* Individual Topic Box */
+.topic-box {
+    background-color: #ffffff; /* White background for the topic boxes */
+    width: 30%;
+    min-width: 250px; /* Ensures boxes have a minimum width */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out; /* Smooth transition for hover effect */
+    text-align: center;
+    cursor: pointer;
+    
+    /* Allow the box height to adjust based on content */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Aligns content to the top */
+    height: auto; /* Remove any fixed height */
+    min-height: 150px; /* Add a minimum height to keep boxes consistent but flexible */
+}
+
+/* Hover effect for topic box */
+.topic-box:hover {
+    transform: translateY(-5px); /* Slightly lift the box on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+/* Topic Title */
+.topic-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* List of Subtopics */
+.topic-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* Allow the list to grow naturally based on the number of topics */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adds spacing between each topic */
+}
+
+/* Individual Subtopic */
+.topic-item {
+    background-color: #f8f8f8;
+    padding: 12px;
+    margin: 8px 0;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: 0.3s;
+    cursor: pointer;
+    color: #333;
+}
+
+.topic-item:hover {
+    background-color: #4CAF50; /* Green color on hover */
+    color: white; /* White text on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .topic-box-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .topic-box {
+        width: 80%; /* Make boxes occupy more space on smaller screens */
+    }
+
+    .topic-heading {
+        font-size: 24px; /* Reduce font size for better readability */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .topic-heading {
+        font-size: 20px; /* Reduce heading size even more for very small screens */
+    }
+
+    .topic-item {
+        font-size: 14px; /* Slightly smaller text for better fitting on small screens */
+    }
+}

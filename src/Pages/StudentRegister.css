@@ -1,0 +1,95 @@
+/* Full page styling */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #d0e8ff; /* Light blue background */
+  }
+  
+  /* Card styling */
+  .register-card {
+    display: flex;
+    width: 900px;
+    height: 650px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  /* Left side image */
+  .register-image {
+    flex: 1;
+  }
+  
+  .register-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Right side form */
+  .register-form {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .button{
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  .register-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .register-form input {
+    width: 95%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .firstLast{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .register-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    align-self: flex-end;
+  }
+  
+  .register-form button:hover {
+    background-color: #0056b3;
+  }  
+
+  /* Centering the "Already registered?" text */
+.already-registered {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.already-registered a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.already-registered a:hover {
+  text-decoration: underline;
+}
+

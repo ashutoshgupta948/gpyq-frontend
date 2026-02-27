@@ -1,0 +1,84 @@
+/* Main Navbar */
+.navbar-container {
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  /* Styling for the h1 tag */
+  .navbar-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 30px;
+    margin-top: -10px;
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Black navigation bar */
+  .nav-list {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .nav-item {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .nav-item:hover {
+    text-decoration: underline;
+  }
+  
+  /* Dropdown Styling */
+  .dropdown-menu {
+    position: absolute;
+    background-color: black;
+    top: 35px;
+    left: 0;
+    width: 160px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    z-index: 100;
+  }
+  
+  .dropdown-item {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: left;
+  }
+  
+  .dropdown-item:hover {
+    background-color: gray;
+  }  
+
+.navbar-title-link {
+  text-decoration: none;
+}
+
+.navbar-title {
+  color: #050505;       /* or whatever your navbar color is */
+  cursor: pointer;
+}
+
+.navbar-title:hover {
+  opacity: 0.85;
+}

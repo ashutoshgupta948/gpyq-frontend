@@ -1,0 +1,80 @@
+/* Page container */
+.admin-container {
+  min-height: 78vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  font-family: Arial, sans-serif;
+}
+
+/* Card */
+.admin-card {
+  background: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+/* Headings */
+.admin-card h2,
+.admin-card h3 {
+  margin-bottom: 20px;
+  color: #1e3c72;
+}
+
+/* Password input */
+.admin-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Buttons */
+.admin-card button {
+  width: 100%;
+  padding: 12px;
+  background-color: #1e3c72;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.admin-card button:hover {
+  background-color: #16305f;
+}
+
+/* Admin links */
+.admin-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.admin-links li {
+  margin: 12px 0;
+}
+
+.admin-links a {
+  display: block;
+  padding: 10px;
+  background-color: #f1f4f8;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #1e3c72;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.admin-links a:hover {
+  background-color: #1e3c72;
+  color: #fff;
+}
