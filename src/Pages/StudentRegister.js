@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from "axios"; // Import axios for API calls
 import "./StudentRegister.css";
 import Registration from "../images/Registration.png";
 import { API_BASE } from "../Config";
+
+const navigate = useNavigate();
 
 const StudentRegister = () => {
   const [formData, setFormData] = useState({
@@ -35,7 +37,8 @@ const StudentRegister = () => {
       alert(response.data.message);
       
       // Redirect to Profile Completion Page (if needed)
-      window.location.href = "/profile-completion";
+      // window.location.href = "/profile-completion";
+      navigate("/profile-completion");
     } catch (error) {
       alert("Registration failed. Please try again.");
       console.error("Error:", error);
