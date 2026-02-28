@@ -5,7 +5,7 @@ import "./StudentRegister.css";
 import Registration from "../images/Registration.png";
 import { API_BASE } from "../Config";
 
-const navigate = useNavigate();
+
 
 const StudentRegister = () => {
   const [formData, setFormData] = useState({
@@ -16,6 +16,8 @@ const StudentRegister = () => {
     password: "",
     confirmPassword: "",
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
