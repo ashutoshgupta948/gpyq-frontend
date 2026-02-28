@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import axios from "axios";
 import "./YearWise.css";
+import { API_BASE } from "../Config";
 
 function YearWiseCSE() {
   const [years, setYears] = useState([]);
@@ -9,7 +10,7 @@ function YearWiseCSE() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8081/UploadDropDownYears")
+      .get(`${API_BASE}/UploadDropDownYears`)
       .then((res) => {
         if (res.data && res.data.length > 0) {
           setYears(res.data.map((item) => item.year)); // Directly store years

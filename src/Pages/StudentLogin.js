@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom"; // For navigation after login
 import axios from "axios";
 import "./StudentLogin.css"; // Import CSS for styling
+import { API_BASE } from "../Config";
 
 const StudentLogin = () => {
   const [formData, setFormData] = useState({
@@ -19,7 +20,8 @@ const StudentLogin = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:8081/studentlogin", formData);
+      // const response = await axios.post("http://localhost:8081/studentlogin", formData);
+      const response = await axios.post(`${API_BASE}/studentlogin`, formData);
 
       if (response.data.success) {
         const { first_name, id } = response.data.user; // Assuming API returns user details

@@ -8,6 +8,7 @@
   import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
   import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism'; // light theme with white background
   import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { API_BASE } from "../Config";
 
   function QuestionsPage(question) {
     const [questions, setQuestions] = useState([]);
@@ -40,7 +41,8 @@
     
     const fetchQuestionsByTopic = async (topic) => {
       try {
-        const response = await fetch(`http://localhost:8081/questions?topic=${encodeURIComponent(topic)}`);
+        // const response = await fetch(`http://localhost:8081/questions?topic=${encodeURIComponent(topic)}`);
+        const response = await fetch(`${API_BASE}/questions?topic=${encodeURIComponent(topic)}`);
         const data = await response.json();
         setQuestions(data);
         setCurrentPage(1);
@@ -51,7 +53,8 @@
 
     const fetchQuestionsBySubject = async (subject) => {
       try {
-        const response = await fetch(`http://localhost:8081/questions?subject=${encodeURIComponent(subject)}`);
+        // const response = await fetch(`http://localhost:8081/questions?subject=${encodeURIComponent(subject)}`);
+        const response = await fetch(`${API_BASE}/questions?subject=${encodeURIComponent(subject)}`);
         const data = await response.json();
         setQuestions(data);
         setCurrentPage(1);
@@ -62,7 +65,8 @@
 
     const fetchQuestionsByYear = async (year) => {
       try {
-        const response = await fetch(`http://localhost:8081/questions?year=${encodeURIComponent(year)}`);
+        // const response = await fetch(`http://localhost:8081/questions?year=${encodeURIComponent(year)}`);
+        const response = await fetch(`${API_BASE}/questions?year=${encodeURIComponent(year)}`);
         const data = await response.json();
         
         if (Array.isArray(data)) {
@@ -120,7 +124,11 @@
       if (isBookmarked) {
         // REMOVE BOOKMARK
         console.log("Trying to remove the question from the bookmark list");
-        const response = await axios.post("http://localhost:8081/removeBookmark", {
+        // const response = await axios.post("http://localhost:8081/removeBookmark", {
+        //   user_id: user.id,
+        //   question_id: questionId
+        // });
+        const response = await axios.post(`${API_BASE}/removeBookmark`, {
           user_id: user.id,
           question_id: questionId
         });
@@ -138,7 +146,11 @@
 
       } else {
         // ADD BOOKMARK
-        const response = await axios.post("http://localhost:8081/bookmark", {
+        // const response = await axios.post("http://localhost:8081/bookmark", {
+        //   user_id: user.id,
+        //   question_id: questionId
+        // });
+        const response = await axios.post(`${API_BASE}/bookmark`, {
           user_id: user.id,
           question_id: questionId
         });
@@ -159,7 +171,8 @@
   // ✅ Fetch bookmarked questions from the database for the logged-in user
   const fetchBookmarkedQuestions = async () => {
     try {
-      const response = await axios.get(`http://localhost:8081/getBookmarks?user_id=${user.id}`);
+      // const response = await axios.get(`http://localhost:8081/getBookmarks?user_id=${user.id}`);
+      const response = await axios.get(`${API_BASE}/getBookmarks?user_id=${user.id}`);
 
       if (response.data.success) {
         const bookmarkedIds = response.data.bookmarks.map((b) => b.question_id); // ✅ Extract bookmarked question IDs
@@ -215,8 +228,13 @@
               {/* 📸 Question Image (if exists) */}
               {q.image_url && (
                 <div className="question-image-wrapper">
-                  <img
+                  {/* <img
                     src={`http://localhost:8081/ques_photos/${q.image_url}`}
+                    alt="Question"
+                    className="question-image"
+                  /> */}
+                  <img
+                    src={`${API_BASE}/ques_photos/${q.image_url}`}
                     alt="Question"
                     className="question-image"
                   />

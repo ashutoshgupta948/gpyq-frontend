@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useMemo } from "react";
 import axios from "axios";
 import JoditEditor from "jodit-react";
 import "./QuestionUpload.css"; // reuse same styles
+import { API_BASE } from "../Config";
 
 function EditQuestion() {
   const editor = useRef(null);
@@ -204,8 +205,13 @@ function EditQuestion() {
           
           {formData.image_url && (
             <div style={{ marginBottom: "10px" }}>
-              <img
+              {/* <img
                 src={`http://localhost:8081/ques_photos/${formData.image_url}`}
+                alt="Current"
+                style={{ maxWidth: "200px", borderRadius: "8px" }}
+              /> */}
+              <img
+                src={`${API_BASE}/ques_photos/${formData.image_url}`}
                 alt="Current"
                 style={{ maxWidth: "200px", borderRadius: "8px" }}
               />

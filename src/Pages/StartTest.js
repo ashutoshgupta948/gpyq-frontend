@@ -8,6 +8,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import "./Questions.css"; // reuse existing styling
+import { API_BASE } from "../Config";
 
 function StartTest() {
   const [questions, setQuestions] = useState([]);
@@ -59,7 +60,11 @@ function StartTest() {
 
   const fetchQuestions = async () => {
     try {
-      const res = await axios.post("http://localhost:8081/get-questions-for-test", {
+      // const res = await axios.post("http://localhost:8081/get-questions-for-test", {
+      //   topicIds: selectedTopics,
+      //   questionCount: parseInt(questionCount)
+      // });
+      const res = await axios.post(`${API_BASE}/get-questions-for-test`, {
         topicIds: selectedTopics,
         questionCount: parseInt(questionCount)
       });
@@ -72,7 +77,10 @@ function StartTest() {
 
   const fetchBookmarkedQuestions = async () => {
     try {
-      const response = await axios.get(`http://localhost:8081/getBookmarks?user_id=${user.id}`);
+      // const response = await axios.get(`http://localhost:8081/getBookmarks?user_id=${user.id}`);
+      const response = await axios.get(`${API_BASE}/getBookmarks?user_id=${user.id}`);
+      
+
       if (response.data.success) {
         const state = {};
         response.data.bookmarks.forEach(b => { state[b.question_id] = true; });
@@ -114,20 +122,16 @@ function StartTest() {
 
     try {
       if (isBookmarked) {
-        await axios.post("http://localhost:8081/removeBookmark", {
-          user_id: user.id,
-          question_id: questionId
-        });
+        // await axios.post("http://localhost:8081/removeBookmark", { user_id: user.id, question_id: questionId });
+        await axios.post(`${API_BASE}/removeBookmark`, { user_id: user.id, question_id: questionId });
         setBookmarked(prev => {
           const updated = { ...prev };
           delete updated[questionId];
           return updated;
         });
       } else {
-        await axios.post("http://localhost:8081/bookmark", {
-          user_id: user.id,
-          question_id: questionId
-        });
+        // await axios.post("http://localhost:8081/bookmark", { user_id: user.id, question_id: questionId });
+        await axios.post(`${API_BASE}/bookmark`, { user_id: user.id, question_id: questionId });
         setBookmarked(prev => ({ ...prev, [questionId]: true }));
       }
     } catch (err) {

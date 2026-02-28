@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import axios from "axios"; // Import axios for API calls
 import "./StudentRegister.css";
 import Registration from "../images/Registration.png";
+import { API_BASE } from "../Config";
 
 const StudentRegister = () => {
   const [formData, setFormData] = useState({
@@ -28,7 +29,9 @@ const StudentRegister = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:8081/studentsregister", formData);
+      // const response = await axios.post("http://localhost:8081/studentsregister", formData);
+      const response = await axios.post(`${API_BASE}/studentsregister`, formData);
+      
       alert(response.data.message);
       
       // Redirect to Profile Completion Page (if needed)

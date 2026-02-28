@@ -102,6 +102,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./TopicWise.css"; // Import the common CSS file
+import { API_BASE } from "../Config";
 
 function TopicWiseCSE() {
   const navigate = useNavigate();
@@ -110,7 +111,7 @@ function TopicWiseCSE() {
   // Fetch topics from the API when component mounts
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8081/topics") // Adjust API URL if needed
+      .get(`${API_BASE}/topics`) // Adjust API URL if needed
       .then((response) => {
         setTopics(response.data); // Set fetched topics in state
       })

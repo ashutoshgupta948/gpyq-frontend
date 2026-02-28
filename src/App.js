@@ -60,7 +60,10 @@ function App() {
 
         <Route path="/upload-question" element={<QuestionUpload />} />
         
-        <Route path="/StudentRegister" element={<StudentRegister />} />
+        {/* <Route path="/StudentRegister" element={<StudentRegister />} /> */}
+        <Route path="/register" element={<StudentRegister />} />
+
+        
         <Route path="/profile-completion" element={<ProfileCompletion />} />
         <Route path="/studentlogin" element={<StudentLogin />} />
         

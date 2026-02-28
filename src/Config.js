@@ -1,0 +1,1 @@
+export const API_BASE = "https://gpyq-backend.onrender.com";

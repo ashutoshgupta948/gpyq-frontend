@@ -3,6 +3,7 @@ import { FaBookmark } from "react-icons/fa6";
 import axios from "axios";
 import parse from "html-react-parser";
 import "./Questions.css";
+import { API_BASE } from '../Config';
 
 function Bookmark() {
 
@@ -19,7 +20,8 @@ function Bookmark() {
 
       const fetchBookmarkedQuestions = async () => {
         try {
-          const response = await axios.get(`http://localhost:8081/getBookmarkedQuestions?user_id=${user.id}`);
+          // const response = await axios.get(`http://localhost:8081/getBookmarkedQuestions?user_id=${user.id}`);
+          const response = await axios.get(`${API_BASE}/getBookmarkedQuestions?user_id=${user.id}`);
           if (response.data.success) {
             setBookmarkedQuestions(response.data.questions);
           }
@@ -58,7 +60,11 @@ function Bookmark() {
 
   const handleRemoveBookmark = async (questionId) => {
   try {
-    await axios.post("http://localhost:8081/removeBookmark", {
+    // await axios.post("http://localhost:8081/removeBookmark", {
+    //   user_id: user.id,
+    //   question_id: questionId
+    // });
+    await axios.post(`${API_BASE}/removeBookmark`, {
       user_id: user.id,
       question_id: questionId
     });

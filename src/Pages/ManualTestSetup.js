@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import './ManualTestSetup.css'; // optional styling
+import { API_BASE } from "../Config";
 
 function ManualTestSetup() {
   const [subjectData, setSubjectData] = useState([]);
@@ -74,7 +75,8 @@ function ManualTestSetup() {
   };
 
   try {
-    const response = await axios.post("http://localhost:8081/start-manual-test", payload);
+    // const response = await axios.post("http://localhost:8081/start-manual-test", payload);
+    const response = await axios.post(`${API_BASE}/start-manual-test`, payload);
     const { test_id, start_time, duration } = response.data;
 
     navigate("/StartTest", {

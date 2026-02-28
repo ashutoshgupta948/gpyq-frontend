@@ -3,6 +3,7 @@ import { FaBookmark } from "react-icons/fa6";
 import parse from "html-react-parser";
 import axios from "axios";
 import "./Questions.css";
+import { API_BASE } from "../Config";
 
 function RandomQuestion() {
   const [question, setQuestion] = useState(null);
@@ -54,7 +55,8 @@ function RandomQuestion() {
   // ✅ Check if question is already bookmarked
   const checkIfBookmarked = async (questionId) => {
     try {
-      const response = await axios.get(`http://localhost:8081/getBookmarks?user_id=${user.id}`);
+      // const response = await axios.get(`http://localhost:8081/getBookmarks?user_id=${user.id}`);
+      const response = await axios.get(`${API_BASE}/getBookmarks?user_id=${user.id}`);
       const bookmarkedIds = response.data.bookmarks.map(b => b.question_id);
       setBookmarked(bookmarkedIds.includes(questionId));
     } catch (error) {
@@ -70,7 +72,11 @@ function RandomQuestion() {
     }
     
     try {
-      const response = await axios.post("http://localhost:8081/bookmark", {
+      // const response = await axios.post("http://localhost:8081/bookmark", {
+      //   user_id: user.id,
+      //   question_id: question.id
+      // });
+      const response = await axios.post(`${API_BASE}/bookmark`, {
         user_id: user.id,
         question_id: question.id
       });
