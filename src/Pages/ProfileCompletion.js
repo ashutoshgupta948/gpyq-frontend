@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./ProfileCompletion.css";
+import { API_BASE } from "../Config";
 
 const ProfileCompletion = () => {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const ProfileCompletion = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/profile", profileData);
+      await axios.post(`${API_BASE}/profile`, profileData);
       alert("Profile Completed Successfully!");
       navigate("/quizzes"); // Redirect to the quizzes page
     } catch (error) {
